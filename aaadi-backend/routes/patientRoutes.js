@@ -1,10 +1,10 @@
  const express = require("express");
 
 const router = express.Router();
-const {getPatientData, postPatientData, updatePatientData, deletePatientData} = require("../controllers/patientController");
+const {getPatientsData,getPatientData, postPatientData, updatePatientData, deletePatientData} = require("../controllers/patientController");
 
-router.route("/").get(getPatientData).post(postPatientData);
-router.route("/:id").put(updatePatientData).delete(deletePatientData);
+router.route("/").get(getPatientsData).post(postPatientData);
+router.route("/:id").get(getPatientData).put(updatePatientData).delete(deletePatientData);
 
 
 

@@ -1,10 +1,14 @@
 const express = require("express");
 const errorHandler = require("./middleware/errorHandler");
+const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
 
+
+connectDb();
 const app = express();
 
 port =  process.env.PORT || 5000;
+
 
 
 app.use(express.json()); // this is body parser where we can post the data from body to the server
